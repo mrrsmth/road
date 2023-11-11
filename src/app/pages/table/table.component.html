@@ -1,5 +1,4 @@
-<!-- Html table -->
-<table mat-table [dataSource]="tableHtml" class="mat-elevation-z8 demo-table">
+<table mat-table [dataSource]="roadmapTable" class="mat-elevation-z8">
   <ng-container matColumnDef="technology">
     <th mat-header-cell *matHeaderCellDef>Technology</th>
     <td mat-cell *matCellDef="let element">{{ element.technology }}</td>
@@ -15,6 +14,6 @@
     <td mat-cell *matCellDef="let element">{{ element.ready }}</td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="headerTableHtml"></tr>
-  <tr mat-row *matRowDef="let row; columns: headerTableHtml"></tr>
+  <tr mat-header-row *matHeaderRowDef="headerRoadMapTable"></tr>
+  <tr mat-row *matRowDef="let row; columns: headerRoadMapTable"></tr>
 </table>
