@@ -43,7 +43,7 @@ export class TableComponent implements OnInit {
   addLocalStorage() {
     this.roadmapTable.forEach((item) => {
       if( item.bool === false) {
-        console.log(false);
+        // console.log(false);
       } else {
         localStorage.setItem(item.theme,'true');
         this.check()
@@ -56,9 +56,22 @@ export class TableComponent implements OnInit {
   }
 
   check() {
+    let local = '';
     for(let i=0; i<localStorage.length; i++) {
       let key = localStorage.key(i) as string;
-      console.log(`${key}: ${localStorage.getItem(key)}`);
+      local += (`${key}: ${localStorage.getItem(key)} + `);
     }
+    console.log(local);
+    // this.roadmapTable.forEach(item => {
+    //   if (item.theme.includes(local)) {
+    //     console.log(item.bool);
+    //   }
+    // })
+    this.roadmapTable.map(item => {
+      if(item.theme.includes(local)) {
+        console.log(true)
+      }
+    })
+
   }
 }
