@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Table } from 'src/app/interface/table';
 
 @Component({
@@ -6,9 +6,13 @@ import { Table } from 'src/app/interface/table';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent {
+export class TableComponent implements OnInit {
   headerRoadMapTable: string[] = ['technology', 'theme', 'bool'];
 
+  constructor() {}
+
+  ngOnInit(): void {
+  }
   roadmapTable: Table[] = [
     { technology: 'HTML', theme: 'Элементы в HTML', bool: false},
     { technology: '', theme: 'Формы, валидация форм', bool: false},
@@ -35,4 +39,26 @@ export class TableComponent {
     { technology: '', theme: 'Дебаг в Chrome DevTools', bool: false},
     { technology: '', theme: 'XMLHttpRequest, FetchApi, WebSocket', bool: false},
   ];
+
+  addLocalStorage() {
+    this.roadmapTable.forEach((item) => {
+      if( item.bool === false) {
+        console.log(false);
+      } else {
+        localStorage.setItem(item.theme,'true');
+        this.check()
+      }
+    });
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
+  }
+
+  check() {
+    for(let i=0; i<localStorage.length; i++) {
+      let key = localStorage.key(i) as string;
+      console.log(`${key}: ${localStorage.getItem(key)}`);
+    }
+  }
 }
