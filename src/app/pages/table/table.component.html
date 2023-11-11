@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="roadmapTable" class="mat-elevation-z8">
+<table mat-table [dataSource]="roadmapTable" class="table">
   <ng-container matColumnDef="technology">
     <th mat-header-cell *matHeaderCellDef>Technology</th>
     <td mat-cell *matCellDef="let element">{{ element.technology }}</td>
@@ -9,7 +9,7 @@
     <td mat-cell *matCellDef="let element">{{ element.theme }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="ready">
+  <ng-container matColumnDef="bool">
     <th mat-header-cell *matHeaderCellDef>Ready</th>
     <td mat-cell *matCellDef="let element">{{ element.ready }}</td>
   </ng-container>
