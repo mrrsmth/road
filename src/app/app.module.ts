@@ -11,7 +11,7 @@ import { ErrorComponent } from './pages/error/error.component';
 import { HeaderComponent } from './pages/header/header.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule} from '@angular/forms';
-
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import {FormsModule} from '@angular/forms';
     BrowserAnimationsModule,
     MatTableModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
