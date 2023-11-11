@@ -1,7 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TableComponent } from './pages/table/table.component';
+import { MainComponent } from './pages/main/main.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { HeaderComponent } from './pages/header/header.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: HeaderComponent,
+    children: [
+      { path: '', redirectTo: '/', pathMatch: 'full' },
+      { path: '', component: MainComponent },
+      { path: 'table', component: TableComponent },
+      { path: 'error', component: ErrorComponent },
+      { path: '**', redirectTo: 'error' },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
