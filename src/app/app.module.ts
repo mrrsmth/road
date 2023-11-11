@@ -9,6 +9,8 @@ import { MainComponent } from './pages/main/main.component';
 import { TableComponent } from './pages/table/table.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { HeaderComponent } from './pages/header/header.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { HeaderComponent } from './pages/header/header.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
