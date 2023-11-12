@@ -8,10 +8,11 @@ import { Table } from 'src/app/interface/table';
 })
 export class TableComponent implements OnInit {
   headerRoadMapTable: string[] = ['technology', 'theme', 'bool'];
-
+  local: string = '';
   constructor() {}
 
   ngOnInit(): void {
+    this.loadLocalStorage();
   }
   roadmapTable: Table[] = [
     { technology: 'HTML', theme: 'Элементы в HTML', bool: false},
@@ -42,36 +43,36 @@ export class TableComponent implements OnInit {
 
   addLocalStorage() {
     this.roadmapTable.forEach((item) => {
-      if( item.bool === false) {
-        // console.log(false);
+      if (item.bool === true) {
+        localStorage.setItem(item.theme, 'true');
       } else {
-        localStorage.setItem(item.theme,'true');
-        this.check()
+        localStorage.removeItem(item.theme);
       }
     });
   }
 
   clearLocalStorage() {
     localStorage.clear();
+    this.loadLocalStorage();
+  }
+
+  loadLocalStorage() {
+    this.roadmapTable.forEach((item) => {
+      const storedValue = localStorage.getItem(item.theme);
+      if (storedValue === 'true') {
+        item.bool = true;
+      } else {
+        item.bool = false;
+      }
+    });
   }
 
   check() {
-    let local = '';
-    for(let i=0; i<localStorage.length; i++) {
-      let key = localStorage.key(i) as string;
-      local += (`${key}: ${localStorage.getItem(key)} + `);
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i) as string;
+      this.local += `${key}: ${localStorage.getItem(key)}, `;
     }
-    console.log(local);
-    // this.roadmapTable.forEach(item => {
-    //   if (item.theme.includes(local)) {
-    //     console.log(item.bool);
-    //   }
-    // })
-    this.roadmapTable.map(item => {
-      if(item.theme.includes(local)) {
-        console.log(true)
-      }
-    })
-
+    console.log(this.local.split(','));
   }
+
 }
