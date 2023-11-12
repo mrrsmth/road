@@ -1,5 +1,7 @@
-<button mat-button (click)="clearLocalStorage()" color="primary">Clear localStorage</button>
-<button mat-button (click)="check()" color="primary">Check</button>
+<div class="test-btn">
+  <button mat-button (click)="clearLocalStorage()" color="primary">Clear localStorage</button>
+  <button mat-button (click)="check()" color="primary">Check</button>
+</div>
 
 <table mat-table [dataSource]="roadmapTable" class="table">
   <ng-container matColumnDef="technology">

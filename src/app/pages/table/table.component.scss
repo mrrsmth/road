@@ -5,6 +5,17 @@
 }
 
 .mat-mdc-button:not(:disabled) {
-    color: var(--mdc-text-button-label-text-color, inherit);
+    color: #fff;
     background-color: darkorchid;
+}
+
+.test-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    button {
+        margin-bottom: 10px;
+    }
 }
