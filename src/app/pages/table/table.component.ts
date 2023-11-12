@@ -19,8 +19,7 @@ export class TableComponent implements OnInit {
     { technology: 'HTML', theme: 'Элементы в HTML', bool: false },
     { technology: '', theme: 'Формы, валидация форм', bool: false },
     { technology: '', theme: 'Семантическая верстка', bool: false },
-    { technology: 'CSS', theme: 'Элементы в HTML', bool: false },
-    { technology: '', theme: 'Селекторы', bool: false },
+    { technology: 'CSS', theme: 'Селекторы', bool: false },
     { technology: '', theme: 'Свойства', bool: false },
     {
       technology: '',
@@ -120,10 +119,9 @@ addLocalStorage(index: number) {
 
   check() {
     for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i) as string;
+      const key = String(localStorage.key(i));
       this.local += `${key}: ${localStorage.getItem(key)}, `;
     }
-    console.log(this.local.split(','));
   }
 
   refresh(): void {
