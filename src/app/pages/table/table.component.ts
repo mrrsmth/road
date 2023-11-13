@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Table } from 'src/app/interface/table';
+import { Table } from 'src/app/interface/iTable.interface';
 
 @Component({
   selector: 'app-table',
@@ -96,10 +96,10 @@ export class TableComponent implements OnInit {
     },
   ];
 
-addLocalStorage(index: number) {
+  addLocalStorage(index: number) {
     const item = this.roadmapTable[index];
     localStorage.setItem(item.theme, String(item.bool));
-}
+  }
 
   clearLocalStorage() {
     localStorage.clear();
