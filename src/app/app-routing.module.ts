@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableComponent } from './pages/table/table.component';
 import { MainComponent } from './pages/main/main.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { HeaderComponent } from './pages/header/header.component';
+import { LayoutComponent } from './pages/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HeaderComponent,
+    component: LayoutComponent,
     children: [
       { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: '', component: MainComponent },
