@@ -1,6 +1,12 @@
-
-<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
-    <button type="button" class="btn active" data-toggle="button" aria-pressed="true" (click)="scrollToTop()">
-        <i class="fas fa-chevron-up" >To Top!</i>
-    </button>
-  </div>
+<div class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+  <button
+    class="btn active"
+    data-toggle="button"
+    aria-pressed="true"
+    (click)="scrollToTop()"
+    mat-button
+    color="primary"
+  >
+    To Top
+  </button>
+</div>
