@@ -12,6 +12,7 @@ import { HeaderComponent } from './pages/header/header.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import { ToTopButtonComponent } from './ui/to-top-button/to-top-button.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatButtonModule} from '@angular/material/button';
     TableComponent,
 
     ErrorComponent,
-     HeaderComponent
+     HeaderComponent,
+     ToTopButtonComponent
   ],
   imports: [
     BrowserModule,
