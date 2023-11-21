@@ -1,32 +1,35 @@
-<div class="display-flex-row-center-center margin-bottom-20 ">
-  <button mat-button (click)="showTestBtn()" color="primary">Show test buttons</button>
-</div>
-<!-- Добавить ли лвл? -->
-<div class="test-btn" *ngIf="showBtn">
-  <button mat-button (click)="clearLocalStorage()" color="primary">Clear localStorage</button>
-  <button mat-button (click)="check()" color="primary">Check</button>
-  <button mat-button (click)="refresh()" color="primary">Refresh</button>
-</div>
+<!-- <div class="min-height-100-percent"> -->
+  <div class="display-flex-row-center-center margin-bottom-20 ">
+    <button mat-button (click)="showTestBtn()" color="primary">Show test buttons</button>
+  </div>
+  <!-- Добавить ли лвл? -->
+  <div class="test-btn" *ngIf="showBtn">
+    <button mat-button (click)="clearLocalStorage()" color="primary">Clear localStorage</button>
+    <button mat-button (click)="check()" color="primary">Check</button>
+    <button mat-button (click)="refresh()" color="primary">Refresh</button>
+  </div>
+  
+  <table mat-table [dataSource]="roadmapTable" class="table">
+    <ng-container matColumnDef="technology">
+      <th mat-header-cell *matHeaderCellDef>Technology</th>
+      <td mat-cell *matCellDef="let element">{{ element.technology }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="theme">
+      <th mat-header-cell *matHeaderCellDef>Theme</th>
+      <td mat-cell *matCellDef="let element">{{ element.theme }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="bool">
+      <th mat-header-cell *matHeaderCellDef>Ready</th>
+      <td mat-cell *matCellDef="let element; let i = index">
+        <mat-checkbox color="primary" (change)="addLocalStorage(i)" class="example-margin" [(ngModel)]="element.bool"></mat-checkbox>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="headerRoadMapTable"></tr>
+    <tr mat-row *matRowDef="let row; columns: headerRoadMapTable"></tr>
+  </table>
+  <to-top-btn></to-top-btn>
+<!-- </div> -->
 
-<table mat-table [dataSource]="roadmapTable" class="table">
-  <ng-container matColumnDef="technology">
-    <th mat-header-cell *matHeaderCellDef>Technology</th>
-    <td mat-cell *matCellDef="let element">{{ element.technology }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="theme">
-    <th mat-header-cell *matHeaderCellDef>Theme</th>
-    <td mat-cell *matCellDef="let element">{{ element.theme }}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="bool">
-    <th mat-header-cell *matHeaderCellDef>Ready</th>
-    <td mat-cell *matCellDef="let element; let i = index">
-      <mat-checkbox color="primary" (change)="addLocalStorage(i)" class="example-margin" [(ngModel)]="element.bool"></mat-checkbox>
-    </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="headerRoadMapTable"></tr>
-  <tr mat-row *matRowDef="let row; columns: headerRoadMapTable"></tr>
-</table>
-<to-top-btn></to-top-btn>
