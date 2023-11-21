@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, OnInit, Inject, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-to-top-button',
+  selector: 'to-top-btn',
   templateUrl: './to-top-button.component.html',
   styleUrls: ['./to-top-button.component.scss']
 })
