@@ -22,7 +22,7 @@
   <ng-container matColumnDef="bool">
     <th mat-header-cell *matHeaderCellDef>Ready</th>
     <td mat-cell *matCellDef="let element; let i = index">
-      <mat-checkbox (change)="addLocalStorage(i)" class="example-margin" [(ngModel)]="element.bool"></mat-checkbox>
+      <mat-checkbox color="primary" (change)="addLocalStorage(i)" class="example-margin" [(ngModel)]="element.bool"></mat-checkbox>
     </td>
   </ng-container>
 
