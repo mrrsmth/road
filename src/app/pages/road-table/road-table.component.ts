@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Table } from 'src/app/interface/iTable.interface';
 
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss'],
+  selector: 'road-table',
+  templateUrl: './road-table.component.html',
+  styleUrls: ['./road-table.component.scss'],
 })
-export class TableComponent implements OnInit {
+export class RoadTableComponent implements OnInit {
   headerRoadMapTable: string[] = ['technology', 'theme', 'bool'];
   local: string = '';
   showBtn:boolean = false;
