@@ -1,12 +1,32 @@
-.mdc-data-table__table {
+$purple: #9932cc;
+$white: #fff;
+
+table {
   margin: 0 auto;
   min-width: 80%;
   max-width: 80%;
+  th {
+    border-bottom: 1px solid $purple;
+  }
+  tr {
+    &:hover {
+      background-color: $purple;
+      color: $white;
+    }
+    td {
+      border-bottom: 1px solid $purple;
+    }
+  }
 }
 
+.mat-mdc-header-row {
+  background-color: $purple;
+  color: $white;
+}
+//Btn
 .mat-mdc-button:not(:disabled) {
   color: #fff;
-  background-color: darkorchid;
+  background-color: $purple;
 }
 
 .test-btn {

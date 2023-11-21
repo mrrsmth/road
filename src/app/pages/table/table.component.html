@@ -1,4 +1,4 @@
-<div class="display-flex-row-center-center">
+<div class="display-flex-row-center-center margin-bottom-20 ">
   <button mat-button (click)="showTestBtn()" color="primary">Show test buttons</button>
 </div>
 
@@ -22,7 +22,7 @@
   <ng-container matColumnDef="bool">
     <th mat-header-cell *matHeaderCellDef>Ready</th>
     <td mat-cell *matCellDef="let element; let i = index">
-      <mat-checkbox (change)="addLocalStorage(i)" class="example-margin" [(ngModel)]="element.bool">{{element.bool}}</mat-checkbox>
+      <mat-checkbox (change)="addLocalStorage(i)" class="example-margin" [(ngModel)]="element.bool"></mat-checkbox>
     </td>
   </ng-container>
 

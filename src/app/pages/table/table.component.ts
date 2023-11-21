@@ -9,10 +9,49 @@ import { Table } from 'src/app/interface/iTable.interface';
 export class TableComponent implements OnInit {
   headerRoadMapTable: string[] = ['technology', 'theme', 'bool'];
   local: string = '';
+  showBtn:boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {
     this.loadLocalStorage();
+  }
+
+
+  addLocalStorage(index: number) {
+    const item = this.roadmapTable[index];
+    localStorage.setItem(item.theme, String(item.bool));
+  }
+
+  clearLocalStorage() {
+    localStorage.clear();
+    this.loadLocalStorage();
+  }
+
+  loadLocalStorage() {
+    this.roadmapTable.forEach((item) => {
+      const storedValue = localStorage.getItem(item.theme);
+      if (storedValue === 'true') {
+        item.bool = true;
+      } else {
+        item.bool = false;
+      }
+    });
+  }
+
+  check() {
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = String(localStorage.key(i));
+      this.local += `${key}: ${localStorage.getItem(key)}, `;
+    }
+  }
+
+  refresh(): void {
+    window.location.reload();
+  }
+
+  showTestBtn() {
+    this.showBtn = this.showBtn === false ? true:false;
   }
 
   roadmapTable: Table[] = [
@@ -356,36 +395,4 @@ export class TableComponent implements OnInit {
       bool: false,
     },
   ];
-
-  addLocalStorage(index: number) {
-    const item = this.roadmapTable[index];
-    localStorage.setItem(item.theme, String(item.bool));
-  }
-
-  clearLocalStorage() {
-    localStorage.clear();
-    this.loadLocalStorage();
-  }
-
-  loadLocalStorage() {
-    this.roadmapTable.forEach((item) => {
-      const storedValue = localStorage.getItem(item.theme);
-      if (storedValue === 'true') {
-        item.bool = true;
-      } else {
-        item.bool = false;
-      }
-    });
-  }
-
-  check() {
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = String(localStorage.key(i));
-      this.local += `${key}: ${localStorage.getItem(key)}, `;
-    }
-  }
-
-  refresh(): void {
-    window.location.reload();
-  }
 }
