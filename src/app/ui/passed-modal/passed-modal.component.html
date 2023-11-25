@@ -1,2 +1,5 @@
-<button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button>
-<button mat-raised-button (click)="openDialog('3ms', '1ms')">Open dialog slowly</button>
+
+<button mat-raised-button (click)="openDialog('0ms', '0ms', table.roadmapTable)">Open dialog without animation</button>
+<button mat-raised-button (click)="openDialog('300ms', '100ms', table.roadmapTable)">Open dialog slowly</button>
+
+{{table.roadmapTable | json}}
