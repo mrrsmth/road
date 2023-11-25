@@ -66,7 +66,7 @@ export class RoadTableComponent implements OnInit {
       bool: false,
     },
     { technology: '', theme: 'Трансформации, переходы, анимации', bool: false },
-    { technology: '', theme: '‘Адаптивный дизайн и медиазапросы', bool: false },
+    { technology: '', theme: 'Адаптивный дизайн и медиазапросы', bool: false },
     {
       technology: '',
       theme: 'СSS-препроцессоры(sass, scss, less)',

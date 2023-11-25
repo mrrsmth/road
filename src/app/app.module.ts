@@ -12,10 +12,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { ToTopButtonComponent } from './ui/to-top-button/to-top-button.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
 import { RoadTableComponent } from './pages/road-table/road-table.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { FooterComponent } from './pages/footer/footer.component';
+import { JavascriptComponent } from './pages/lesson/javascript/javascript.component';
+import { TypesComponent } from './pages/lesson/pages/types/types.component';
+import { PassedModalComponent } from './ui/passed-modal/passed-modal.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,9 @@ import { FooterComponent } from './pages/footer/footer.component';
     ToTopButtonComponent,
     MenuComponent,
     FooterComponent,
+    JavascriptComponent,
+    TypesComponent,
+    PassedModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +44,7 @@ import { FooterComponent } from './pages/footer/footer.component';
     FormsModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
     HttpClientModule,
   ],
   providers: [],
